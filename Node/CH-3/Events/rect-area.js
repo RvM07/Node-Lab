@@ -13,6 +13,8 @@ function areacir(r){
     console.log(`Area of circle is ${3.14*r*r}`);
 }
 
-arear(4,5);
-areas(14);
-areacir(7);
+emitter.on('event',arear);
+emitter.on('event',areas);
+emitter.on('event',areacir);
+
+emitter.emit('event',4,5)
