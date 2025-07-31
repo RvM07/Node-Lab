@@ -13,7 +13,7 @@ setImmediate(() => {
 setTimeout(() => {
     add(15, 25);
     console.log("Timeout function executed\n");
-}, 1000);
+}, 3000);
 
 process.nextTick(() => {
     add(1, 2);
