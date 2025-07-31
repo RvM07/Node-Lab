@@ -15,7 +15,9 @@ function add(n1, n2) {
 
 emitter.on('event3', show);
 emitter.on('event3', clg);
-emitter.on('event3', () => add(7, 14)); 
+emitter.on('event3', () => add(7, 14));
+
+emitter.emit('event3', 'Hello World');
 
 console.log('Listeners:', emitter.listeners('event3'));
 console.log('Listener count:', emitter.listenerCount('event3'));
@@ -24,5 +26,3 @@ emitter.prependListener('event3', () => {
     console.log("Prepended function runs first");
 });
 
-// Emit the event
-emitter.emit('event3', 'Hello World');
