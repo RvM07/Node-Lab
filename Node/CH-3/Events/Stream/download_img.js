@@ -2,7 +2,7 @@ const axios = require('axios');
 const fs = require ('fs');
 const path = require('path');
 
-const imgurl = 'https://shorturl.at/NyZuy';
+const imgurl = 'https://shorturl.at/rubYD';
 const op = path.resolve(__dirname,'downloaded_img.jpg')
 
 async function dwimg(url,oplocation) {
