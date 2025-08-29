@@ -5,7 +5,7 @@ app.get('/', function (req, res) {
   return res.end('Home Page');
 });
 
-app.get('/about', function (req, res) {
+app.get('/About', function (req, res) {
   return res.end('about Page');
 });
 
