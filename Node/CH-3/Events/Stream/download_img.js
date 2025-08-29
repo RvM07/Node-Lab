@@ -2,18 +2,18 @@ const axios = require('axios');
 const fs = require ('fs');
 const path = require('path');
 
-const imgurl = 'https://shorturl.at/rubYD';
+const imgurl = 'https://shorturl.at/K476p';
 const op = path.resolve(__dirname,'downloaded_img.jpg')
 
-async function dwimg(url,oplocation) {
+async function dwimg(url,oploc) {
     try{
         const rs = await axios({
             method:'GET',
             url:url,
-            resType:'stream'
+            responseType:'stream'
         });
 
-        const ws = fs.createWriteStream(oplocation);
+        const ws = fs.createWriteStream(oploc);
         rs.data.pipe(ws);
 
         ws.on('finish',()=>{
