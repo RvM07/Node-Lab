@@ -17,4 +17,6 @@ var server = http.createServer(function (req, res) {
     
     res.write(fibSeries);
     res.end();
-}).listen(3000);
+}).listen(3000,()=>{
+    console.log('Server is listening on http://localhost:3000/');
+});
