@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.use('/public', express.static('Public'));
+app.use('/Public', express.static('Public'));
 app.use('/todos', express.static('todos'));
 
 app.listen(port, () => {
