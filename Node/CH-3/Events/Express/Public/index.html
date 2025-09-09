@@ -34,5 +34,16 @@
             </form>
         </tr>
     </table>
+    <script>
+        function saveSelection() {
+            const selectedValues = [];
+            const checkboxes = document.querySelectorAll('input[name="option"]:checked');
+            checkboxes.forEach((checkbox) => {
+                    selectedValues.push(checkbox.value);
+                });
+            const t1 = document.getElementById('newTodo').selectedValues.push(t1.value);
+            localStorage.setItem('selectedValues', JSON.stringify(selectedValues));
+        }
+    </script>
 </body>
 </html>
