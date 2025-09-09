@@ -6,8 +6,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.use('/Public', express.static('Public'));
-app.use('/todos', express.static('todos'));
+app.use('/Node/CH-3/Events/Express/Public', express.static('Public'));
+app.use('/Node/CH-3/Events/Express/todos', express.static('todos'));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
