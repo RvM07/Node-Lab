@@ -6,8 +6,9 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.use('/Node/CH-3/Events/Express/Public', express.static('Public'));
-app.use('/Node/CH-3/Events/Express/todos', express.static('todos'));
+// Serve static files from Public and todos directories
+app.use(express.static('Public'));
+app.use(express.static('todos'));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
