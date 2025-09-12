@@ -7,7 +7,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-// Serve static files with absolute paths
 app.use('/public', express.static(path.join(__dirname, 'Public')));
 app.use('/todos', express.static(path.join(__dirname, 'todos')));
 
