@@ -20,7 +20,7 @@ app.get('/feedback', (req, res) => {
     res.send(`
         <div class="container">
             <h1>Feedback Form</h1>
-            <form action="/submit-feedback" method="POST"></form>
+            <form action="/submit-feedback" method="POST">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name" required><br><br>
                 <label for="email">Email:</label><br>
@@ -28,7 +28,7 @@ app.get('/feedback', (req, res) => {
                 <label for="feedback">Feedback:</label><br>
                 <textarea id="feedback" name="feedback" rows="4" required></textarea><br><br>
                 <button type="submit">Submit</button>
-                </form>
+            </form>
             <p><a href='/'>Back to home page</a></p>
         </div>
     `);
