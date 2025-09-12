@@ -1,14 +1,15 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const path = require('path');
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-// Serve static files from Public and todos directories
-app.use(express.static('Public'));
-app.use(express.static('todos'));
+// Serve static files with absolute paths
+app.use('/public', express.static(path.join(__dirname, 'Public')));
+app.use('/todos', express.static(path.join(__dirname, 'todos')));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
