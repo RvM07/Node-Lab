@@ -34,3 +34,13 @@ app.get('/feedback', (req, res) => {
         </div>
     `);
 });
+
+app.post('/submit-feedback', (req, res) => {
+    const { name, email, feedback } = req.body;
+    console.log(`Feedback received from ${name} (${email}): ${feedback}`);
+    res.send(`
+        <h1>Thank you for your feedback, ${name}!</h1>
+        <p>We recieved your feedback:</p>
+        <p><a href='/'>Back to home page</a></p>
+    `);
+});
