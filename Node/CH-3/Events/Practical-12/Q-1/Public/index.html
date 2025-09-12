@@ -26,7 +26,7 @@
             </td>
         </tr>
         <tr>
-            <form action="/Node/CH-3/Events/Express/todos/" method="get">
+            <form action="/todos/" method="get">
                 <td align="center">
                     <input type="text" name="newTodo" id="newTodo"><br><br>
                     <input type="submit" onclick="saveSelection()" value="Add Todo">
@@ -39,10 +39,16 @@
             const selectedValues = [];
             const checkboxes = document.querySelectorAll('input[name="option"]:checked');
             checkboxes.forEach((checkbox) => {
-                    selectedValues.push(checkbox.value);
-                });
-            const t1 = document.getElementById('newTodo').selectedValues.push(t1.value);
+                selectedValues.push(checkbox.value);
+            });
+            
+            const newTodoInput = document.getElementById('newTodo');
+            if (newTodoInput.value.trim() !== '') {
+                selectedValues.push(newTodoInput.value);
+            }
+            
             localStorage.setItem('selectedValues', JSON.stringify(selectedValues));
+            return true;
         }
     </script>
 </body>
