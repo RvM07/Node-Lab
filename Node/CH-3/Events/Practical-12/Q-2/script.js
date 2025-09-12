@@ -27,9 +27,8 @@ app.get('/feedback', (req, res) => {
                 <input type="email" id="email" name="email" required><br><br>
                 <label for="feedback">Feedback:</label><br>
                 <textarea id="feedback" name="feedback" rows="4" required></textarea><br><br>
-                <input type="submit" value="Submit">
-                <button type="submit" Submit feedback</button>
-            </form>
+                <button type="submit">Submit</button>
+                </form>
             <p><a href='/'>Back to home page</a></p>
         </div>
     `);
@@ -39,8 +38,21 @@ app.post('/submit-feedback', (req, res) => {
     const { name, email, feedback } = req.body;
     console.log(`Feedback received from ${name} (${email}): ${feedback}`);
     res.send(`
+        <html>
+        <head>
+            <link rel="stylesheet" href="/styles.css">
+        </head>
+        <body>
         <h1>Thank you for your feedback, ${name}!</h1>
         <p>We recieved your feedback:</p>
+        <blockquote>${feedback}</blockquote>
+        <p>We'll get back to you at ${email} if necessary</p>
         <p><a href='/'>Back to home page</a></p>
+        </body>
+        </html>
     `);
+});
+
+app.listen(7777, () => {
+    console.log('Server is running on http://localhost:7777');
 });
