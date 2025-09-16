@@ -10,8 +10,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
     res.send(`
         <div style="text-align: center; margin-top: 50px;">
-        <h1>Welcome to Registration form</h1>
-        <a href="/registration">Go to Registration Form</a>
+            <h1>Welcome to Registration form</h1>
+            <a href="/registration">Go to Registration Form</a>
         </div>
     `);
 });
@@ -23,14 +23,19 @@ app.get('/registration', (req, res) => {
             <form action="/submit-registration" method="POST">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name" required><br><br>
+
                 <label for="email">Email:</label><br>
                 <input type="email" id="email" name="email" required><br><br>
-                <label for="roll-no">Roll No:</label><br>
-                <input type="number" id="roll-no" name="roll-no" required><br><br>
-                <label for="class-s">lass:</label><br>
-                <input type="class-s" id="class-s" name="roll-no" required><br><br>
+
+                <label for="rollNo">Roll No:</label><br>
+                <input type="number" id="rollNo" name="rollNo" required><br><br>
+
+                <label for="classS">Class:</label><br>
+                <input type="text" id="classS" name="classS" required><br><br>
+
                 <label for="qualification">Qualification:</label><br>
-                <textarea id="qualification" name="qualification" rows="4" required></textarea><br><br>
+                <textarea id="qualification" name="qualification" required></textarea><br><br>
+
                 <button type="submit">Submit</button>
             </form>
             <p><a href='/'>Back to home page</a></p>
@@ -39,19 +44,24 @@ app.get('/registration', (req, res) => {
 });
 
 app.post('/submit-registration', (req, res) => {
-    const { name, email, feedback } = req.body;
-    console.log(`Registred from ${name} (${email}): ${feedback} ${class-s} `);
+    const { name, email, rollNo, classS, qualification } = req.body;
+    console.log(`Registered: Name: ${name}, Email: ${email}, Roll No: ${rollNo}, Class: ${classS}, Qualification: ${qualification}`);
+
     res.send(`
         <html>
         <head>
             <link rel="stylesheet" href="/styles.css">
         </head>
         <body>
-        <h1>Thank you for your feedback, ${name}!</h1>
-        <p>We recieved your feedback:</p>
-        <blockquote>${feedback}</blockquote>
-        <p>We'll get back to you at ${email} if necessary</p>
-        <p><a href='/'>Back to home page</a></p>
+            <h1>Thank you for your registration, ${name}!</h1>
+            <p>We received your details:</p>
+            <ul>
+                <li><strong>Email:</strong> ${email}</li>
+                <li><strong>Roll No:</strong> ${rollNo}</li>
+                <li><strong>Class:</strong> ${classS}</li>
+                <li><strong>Qualification:</strong> ${qualification}</li>
+            </ul>
+            <p><a href='/'>Back to home page</a></p>
         </body>
         </html>
     `);
