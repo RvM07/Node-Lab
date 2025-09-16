@@ -10,23 +10,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
     res.send(`
         <div style="text-align: center; margin-top: 50px;">
-        <h1>Welcome to feedback form</h1>
-        <a href="/feedback">Go to Feedback Form</a>
+        <h1>Welcome to Registration form</h1>
+        <a href="/registration">Go to Registration Form</a>
         </div>
     `);
 });
 
-app.get('/feedback', (req, res) => {
+app.get('/registration', (req, res) => {
     res.send(`
         <div class="container">
-            <h1>Feedback Form</h1>
-            <form action="/submit-feedback" method="POST">
+            <h1>Registration Form</h1>
+            <form action="/submit-registration" method="POST">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name" required><br><br>
                 <label for="email">Email:</label><br>
                 <input type="email" id="email" name="email" required><br><br>
-                <label for="feedback">Feedback:</label><br>
-                <textarea id="feedback" name="feedback" rows="4" required></textarea><br><br>
+                <label for="roll-no">Roll No:</label><br>
+                <input type="number" id="roll-no" name="roll-no" required><br><br>
+                <label for="class-s">lass:</label><br>
+                <input type="class-s" id="class-s" name="roll-no" required><br><br>
+                <label for="qualification">Qualification:</label><br>
+                <textarea id="qualification" name="qualification" rows="4" required></textarea><br><br>
                 <button type="submit">Submit</button>
             </form>
             <p><a href='/'>Back to home page</a></p>
@@ -34,9 +38,9 @@ app.get('/feedback', (req, res) => {
     `);
 });
 
-app.post('/submit-feedback', (req, res) => {
+app.post('/submit-registration', (req, res) => {
     const { name, email, feedback } = req.body;
-    console.log(`Feedback received from ${name} (${email}): ${feedback}`);
+    console.log(`Registred from ${name} (${email}): ${feedback} ${class-s} `);
     res.send(`
         <html>
         <head>
