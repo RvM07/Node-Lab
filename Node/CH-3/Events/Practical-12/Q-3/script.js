@@ -49,9 +49,6 @@ app.post('/submit-registration', (req, res) => {
 
     res.send(`
         <html>
-        <head>
-            <link rel="stylesheet" href="/styles.css">
-        </head>
         <body>
             <h1>Thank you for your registration, ${name}!</h1>
             <p>We received your details:</p>
