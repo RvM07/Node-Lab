@@ -6,7 +6,7 @@ const con = mysql.createConnection({
     database:'Customer'
 });
 
-con.query('INSERT INTO Customers VALUES(?,?)',['Anushka','Satara'],(err,result)=>{
+con.query('SELECT * FROM Customers',(err,result)=>{
     if (err) throw err;
     console.log(result);
 });
